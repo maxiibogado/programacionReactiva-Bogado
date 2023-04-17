@@ -1,0 +1,17 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div>
+      <label>
+        Nombre:
+        <input type="text" formControlName="nombre">
+      </label>
+      <label>
+        Apellido:
+        <input type="text" formControlName="apellido">
+      </label>
+    </div>
+    <button type="submit">Agregar persona</button>
+</form>
+
+<div *ngIf="mensajePromesa$ | async as mensaje">{{ mensaje }}</div>
+<div *ngIf="mensajeObservable$ | async as mensajeObservable">{{ mensajeObservable$ }}</div>
+
